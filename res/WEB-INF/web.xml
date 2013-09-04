@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+    version="2.4">
+
+    <display-name>MongoDBlog</display-name>
+    <description>MongoDBlog</description>
+
+    <init-param>
+        <param-name>dbname</param-name>
+        <param-value>blogdb</param-value>
+    </init-param>
+
+    <init-param>
+        <param-name>collection</param-name>
+        <param-value>blogentries</param-value>
+    </init-param>
+
+    <!-- load servlet as soon as possible -->
+    <load-on-startup>1</load-on-startup>
+
+    <servlet>
+        <servlet-name>AjaxServlet</servlet-name>
+        <servlet-class>com.github.bjarneh.web.AjaxServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>BlogServlet</servlet-name>
+        <servlet-class>com.github.bjarneh.web.BlogServlet</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>com.github.bjarneh.web.EditServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>AjaxServlet</servlet-name>
+        <url-pattern>/ajax</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>BlogServlet</servlet-name>
+        <url-pattern>/blog</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+
+</web-app>

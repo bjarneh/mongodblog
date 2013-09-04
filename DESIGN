@@ -1,0 +1,74 @@
+
+[blog]
+
+    a simple blog interface, which presents the last
+    blog you have written, and gives you a list over
+    over previous blog entries with a link to them,
+    and a search box
+
+    ·-----------------------------------------------------·
+    |                                                     |
+    |    HEADER                              [ search ]   |
+    |  -------------------------------------------------  |
+    |                            [·edit·]                 |
+    |                                                     |
+    |   main body main body                               |
+    |   main body main body                 [· blog 2 ·]  |
+    |   main body main body                 [· blog 3 ·]  |
+    |   main body main body                 [· blog 4 ·]  |
+    |   main body main body                               |
+    |   main body main body                               |
+    |                                                     |
+    |                                                     |
+    |                                                     |
+    ·-----------------------------------------------------·
+
+
+[data]
+
+    each blog entry is stored with these attributes:
+
+     - title
+     - date
+     - body (text)
+
+     the bean-like class BlogPost is used in the
+     templates (jsp), we fill them with document info
+     from the MongoDB database.
+
+
+
+[requests]
+
+    GET:
+        /mb/edit            -  request to create new article
+        /mb/edit?a=new      -  request to create new article
+        /mb/edit?a=101010   -  request to edit article 101010
+
+        /mb/blog            -  view latest blog (and titles for top 10)
+        /mb/blog?a=101010   -  view article 101010
+
+        /mb/ajax?q=what     -  return HTML list of blog with 'what' in title
+
+
+    handled by 3 different servlets all extending MongoServlet
+
+      - AjaxServlet
+      - EditServlet
+      - BlogServlet
+
+    the search-box requests /mb/ajax and replaces previuos
+    articles with matches for search terms written inside
+    the box.
+
+
+    POST:
+        /mb/edit
+
+    parameters:
+        btitle   - a new/edited blog title
+        bbody    - a new/edited blog body
+        bid      - article id of blog entry to update
+        
+
+

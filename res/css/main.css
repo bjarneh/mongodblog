@@ -1,0 +1,106 @@
+
+@font-face{
+    font-family:"specialelite";
+    src:url("./font/special_elite/SpecialElite.ttf");
+}
+
+body {
+    color: #FFFFFF;
+    background-color: #150517;
+    font-family: "specialelite";
+}
+
+p,li,pre {
+    font-size: 14pt;
+}
+
+a, a:hover, a:active, a:visited {
+    text-decoration: none;
+    color: #FFE87C;
+    cursor: pointer;
+    font-size: 14pt;
+}
+
+
+h1 a#main {
+    text-decoration: none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 26px;
+}
+
+div#blogpost {
+    width: 70%;
+    padding: 5px;
+/**     border: 1px solid #ffffff; **/
+}
+
+div#searchbox {
+/**     float: right; **/
+    position: absolute;
+    right: 12px;
+    top: 25px;
+    max-width: 25%;
+    min-width: 20%;
+}
+
+div#searchbox input {
+    width: 100%;
+}
+
+div#controls {
+    float: right;
+    padding: 4px;
+    background-color: #120414;
+/**     background-color: #000; **/
+/**     border: 1px solid #fff; **/
+}
+
+div#controls > a {
+    font-size: 12px;
+}
+
+div#searchresult {
+    float: right;
+}
+
+div#searchajax {
+    padding-right: 10px;
+}
+
+div#previous {
+    position: absolute;
+    right: 7px;
+    top:  120px;
+/**     top: 14%; **/
+/**     border: 1px solid #ffffff; **/
+    border: 1px solid #f5f5f5;
+    min-width: 20%;
+    max-width: 25%;
+    min-height: 70%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 17px;
+    background-color: #120414;
+/**     background: linear-gradient(to bottom, #000 0%, #00ff00 50%, #000 100%); **/
+}
+
+p#tinydate {
+    font-size: 11px;
+/**     color: #f5f5f5; **/
+    color: #00f000;
+    padding-left: 5px;
+}
+
+ul.squarebullets {
+    list-style-type: square;
+}
+
+.squarebullets li {
+    padding-top: 5px;
+}
+
+
+.reset {
+    clear: both;
+}
