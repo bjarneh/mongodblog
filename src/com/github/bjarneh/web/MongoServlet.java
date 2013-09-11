@@ -12,7 +12,7 @@ import java.net.UnknownHostException;
 import static java.lang.String.format;
 
 // servlet api
-import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.ServletException;
 import javax.servlet.RequestDispatcher;
@@ -52,14 +52,14 @@ public class MongoServlet extends HttpServlet {
 
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-
-        super.init(config);
+    public void init() throws ServletException {
 
         String dbname, collection;
 
-        dbname     = config.getInitParameter("dbname");
-        collection = config.getInitParameter("collection");
+        ServletContext context = getServletConfig().getServletContext();
+
+        dbname     = context.getInitParameter("dbname");
+        collection = context.getInitParameter("collection");
 
         //FIXME these seem to be null quite often :-)
 
